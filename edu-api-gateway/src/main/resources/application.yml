@@ -1,0 +1,29 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: edu-api-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: edu-content
+          uri: lb://edu-content
+          predicates:
+            - Path=/content/**
+          filters:
+            - name: AuthFilter
+              args:
+                headerName: Authorization
+
+        - id: edu-identity
+          uri: lb://edu-identity
+          predicates:
+            - Path=/auth/**
+          filters:
+            - name: AuthFilter
+              args:
+                headerName: Authorization
+eureka:
+  client:
+    service-url:
+      defaultZone : http://localhost:8761/eureka/
