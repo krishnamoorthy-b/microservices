@@ -1,5 +1,5 @@
-server:
-  port: 8080
+#server:
+#  port: 8080
 spring:
   application:
     name: edu-api-gateway
@@ -11,19 +11,29 @@ spring:
           predicates:
             - Path=/content/**
           filters:
-            - name: AuthFilter
-              args:
-                headerName: Authorization
+            - StripPrefix=1
 
         - id: edu-identity
           uri: lb://edu-identity
           predicates:
-            - Path=/auth/**
+            - Path=/security/**
           filters:
-            - name: AuthFilter
-              args:
-                headerName: Authorization
+            - StripPrefix=1
+
+#        - id: edu-identity
+#          uri: lb://edu-identity
+#          predicates:
+#            - Path=/auth/**
+#          filters:
+#            - name: AuthFilter
+#              args:
+#                headerName: Authorization
 eureka:
   client:
     service-url:
       defaultZone : http://localhost:8761/eureka/
+
+netty:
+  dns:
+    resolver:
+      use_native: false

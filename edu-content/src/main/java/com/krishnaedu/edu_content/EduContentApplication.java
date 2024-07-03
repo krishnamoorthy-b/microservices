@@ -15,9 +15,4 @@ public class EduContentApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(EduContentApplication.class, args);
 	}
-
-	@GetMapping(path = "/course")
-	public ResponseEntity<?> getContent(){
-		return ResponseEntity.ok("{course: 'Java Full Stack Developer'}");
-	}
 }
