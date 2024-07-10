@@ -12,6 +12,10 @@ spring:
             - Path=/content/**
           filters:
             - StripPrefix=1
+            - name: ContentServiceAccessFilter
+              args:
+                protectedPaths: /courses
+                protectedMethods: GET, POST
 
         - id: edu-identity
           uri: lb://edu-identity

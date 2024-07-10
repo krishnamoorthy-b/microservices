@@ -30,4 +30,16 @@ public class CourseService {
 
         return courses;
     }
+
+    public List<Technology> getTechnologies(){
+        List<Technology> technologies = new ArrayList<>();
+
+        // Preparing Technologies
+        Technology technology = new Technology();
+        technology.setId(UUID.randomUUID().toString());
+        technology.setName("Java");
+        technologies.add(technology);
+
+        return technologies;
+    }
 }
