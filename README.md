@@ -27,3 +27,6 @@
 - Netflix Eureka Server
 - Netflix Eureka Client
 - JWT
+
+#### ToDo
+[ ] Token expiry logic
