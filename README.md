@@ -29,4 +29,4 @@
 - JWT
 
 #### ToDo
-[ ] Token expiry logic
+- [ ] Token expiry logic
