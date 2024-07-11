@@ -12,6 +12,11 @@
 - URL -> http://localhost:8080/security/auth/token
 - Request Method -> GET
 
+##### Content API
+- URL -> http://localhost:8080/content/courses
+- Request Method -> GET
+- Request Header -> Header name is **Authorize** and value is **token**.
+
 #### Architecture
 
 ![microservice drawio (1)](https://github.com/krishnamoorthy-b/microservices/assets/25192795/0894e239-627e-44f2-9216-7ba64514b403)
