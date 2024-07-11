@@ -23,15 +23,6 @@ spring:
             - Path=/security/**
           filters:
             - StripPrefix=1
-
-#        - id: edu-identity
-#          uri: lb://edu-identity
-#          predicates:
-#            - Path=/auth/**
-#          filters:
-#            - name: AuthFilter
-#              args:
-#                headerName: Authorization
 eureka:
   client:
     service-url:
